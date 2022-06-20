@@ -28,7 +28,7 @@ namespace WinformUI
 
         private void ProductsListForm_Load(object sender, EventArgs e)
         {
-           
+            radioStockCode.Checked=true;
           
             gridProductList.DataSource = InstanceFactory.GetInstance<IProductService>().GetAllProductDetail().Data;
             gridProductList.Columns[0].HeaderText = "ProductId";
@@ -75,8 +75,41 @@ namespace WinformUI
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            gridProductList.DataSource = InstanceFactory.GetInstance<IProductService>().GetAllProductDetail().Data; 
-           
+         
+        }
+
+        private void txtFilter_TextChanged(object sender, EventArgs e)
+        {
+            if (txtFilter.Text.Length>2)
+            {
+                if (radioBarcode.Checked)
+                {
+                    gridProductList.DataSource = InstanceFactory.GetInstance<IProductService>().GetAllByBarcode(txtFilter.Text).Data;
+                }
+                else if (radioBrand.Checked)
+                {
+                    gridProductList.DataSource = InstanceFactory.GetInstance<IProductService>().GetAllByBrand(txtFilter.Text).Data;
+                }
+                else if (radioStockCode.Checked)
+                {
+                    gridProductList.DataSource = InstanceFactory.GetInstance<IProductService>().GetAllByStockCode(txtFilter.Text).Data;
+                }
+                else if (radioStokName.Checked)
+                {
+                     gridProductList.DataSource = InstanceFactory.GetInstance<IProductService>().GetAllByProductName(txtFilter.Text).Data;
+                }
+                else if (radioCategory.Checked)
+                {
+                    gridProductList.DataSource = InstanceFactory.GetInstance<IProductService>().GetAllByCategory(txtFilter.Text).Data;
+                }
+               
+            }
+
+            if (txtFilter.Text.Length<1)
+
+            {
+                gridProductList.DataSource = InstanceFactory.GetInstance<IProductService>().GetAllProductDetail().Data;
+            }
         }
     }
 }

@@ -30,6 +30,7 @@ namespace Entities.Concrete
 
         public string? SpecialCode2 { get; set; } 
 
+         public decimal Quantity { get; set; }
         public decimal? CriticalQuantity { get; set; } 
 
         public decimal? Vat { get; set; } 

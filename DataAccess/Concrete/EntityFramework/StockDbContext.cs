@@ -8,12 +8,18 @@ namespace DataAccess.Concrete.EntityFramework
 {
     public class StockDbContext: DbContext
     {
+        public StockDbContext()
+        {
+            Database.AutoTransactionsEnabled = false;
+        }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(@"Server=.;Database=StockDb;Trusted_Connection=true");
         }
 
         public DbSet<Product> Products { get; set; }
+
+        public DbSet<Shortcut> Shortcuts { get; set; }
         public DbSet<Category> Categories { get; set; }
 
         public DbSet<Brand> Brands { get; set; }

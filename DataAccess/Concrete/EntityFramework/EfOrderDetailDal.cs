@@ -23,7 +23,7 @@ namespace DataAccess.Concrete.EntityFramework
                                  
 
                                 ProductId=o.ProductId,
-                               
+                                
                                 OrderDetailId=o.OrderDetailId,
                                 Quantity=o.Quantity,
                                 UnitName=u.UnitName,

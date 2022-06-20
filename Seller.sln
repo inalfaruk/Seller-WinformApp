@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WinformUI", "WinformUI\Winf
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleUI", "ConsoleUI\ConsoleUI.csproj", "{33F0C3CA-7027-4B6A-AF60-754F1E5B59B4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{01024C51-D679-4587-9590-10A721B73910}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccess", "DataAccess\DataAccess.csproj", "{01024C51-D679-4587-9590-10A721B73910}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

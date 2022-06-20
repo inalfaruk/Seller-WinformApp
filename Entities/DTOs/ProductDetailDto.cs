@@ -22,8 +22,8 @@ namespace Entities.DTOs
         public int BrandId { get; set; }
         public string BrandName { get; set; }
 
-        public int ColorId { get; set; }
-        public string ColorName { get; set; }
+        public int? ColorId { get; set; }
+        public string? ColorName { get; set; }
 
         public decimal? PurchasePrice { get; set; }
 
@@ -44,6 +44,7 @@ namespace Entities.DTOs
         public string? ImgPath { get; set; }
 
         public bool Active { get; set; }
+        public decimal Quantity { get; set; }
 
     }
 }

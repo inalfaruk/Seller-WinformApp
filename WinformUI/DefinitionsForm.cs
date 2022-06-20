@@ -43,6 +43,7 @@ namespace WinformUI
             gridDefinitions.DataSource = InstanceFactory.GetInstance<IUnitService>().GetAll().Data;
             gridDefinitions.Columns[0].Visible = false;
             gridDefinitions.Columns[1].HeaderText = "Birim";
+            gridDefinitions.Columns[1].Width = 244;
 
 
         }
@@ -52,6 +53,7 @@ namespace WinformUI
             gridDefinitions.DataSource = InstanceFactory.GetInstance<ICategoryService>().GetAll().Data;
             gridDefinitions.Columns[0].Visible = false;
             gridDefinitions.Columns[1].HeaderText = "Kategori";
+            gridDefinitions.Columns[1].Width = 244;
         }
 
         private void GetAllBrand()
@@ -59,6 +61,7 @@ namespace WinformUI
             gridDefinitions.DataSource = InstanceFactory.GetInstance<IBrandService>().GetAll().Data;
             gridDefinitions.Columns[0].Visible = false;
             gridDefinitions.Columns[1].HeaderText = "Marka";
+            gridDefinitions.Columns[1].Width = 244;
         }
 
         private void btnUnit_Click(object sender, EventArgs e)
@@ -142,6 +145,11 @@ namespace WinformUI
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

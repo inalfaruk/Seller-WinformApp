@@ -26,8 +26,8 @@ namespace WinformUI
             InitializeComponent();
 
         }
-
-
+        OpenFileDialog fd = new OpenFileDialog();
+        bool fdControl=false;
         private void ProductForm_Load(object sender, EventArgs e)
         {
             GetProducts();
@@ -104,11 +104,17 @@ namespace WinformUI
             product.Vat = Convert.ToDecimal(txtVat.Text);
             product.Discount = Convert.ToDecimal(txtDiscount.Text);
             product.Description = txtDescription.Text;
-
-            InstanceFactory.GetInstance<IProductService>().Add(product);
-            this.ResetText();
+            
            
-
+            if (fdControl==true)
+            {
+                product.ImgPath = product.Barcode.ToString();
+           
+                var fileName = fd.FileName;
+                System.IO.File.Copy(fileName, Application.StartupPath.ToString() +@"\images\" +product.Barcode + ".jpg");
+             }
+ InstanceFactory.GetInstance<IProductService>().Add(product);
+            this.ResetText();
             GetProducts();
         }
 
@@ -118,6 +124,22 @@ namespace WinformUI
             pf.Show();
         }
 
-       
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSelectImage_Click(object sender, EventArgs e)
+        {
+        if (fd.ShowDialog() == DialogResult.OK)
+        {
+
+            fd.InitialDirectory = Application.StartupPath.ToString();
+            fd.Filter = "Images (*.jpg)|*jpg|All files (*.*)|*.*";
+            
+
+                fdControl = true;
+        } // MessageBox.Show()
+        }
     }
 }

@@ -34,6 +34,10 @@ namespace Bussiness.Constants.DependencyResolvers.Autofac
 
             builder.RegisterType<UnitManager>().As<IUnitService>().SingleInstance();
             builder.RegisterType<EfUnitDal>().As<IUnitDal>().SingleInstance();
+
+
+            builder.RegisterType<ShortcutManager>().As<IShortcutService>().SingleInstance();
+            builder.RegisterType<EfShortcutDal>().As<IShortcutDal>().SingleInstance();
         }
 
     }

@@ -47,6 +47,9 @@
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.button1.Location = new System.Drawing.Point(226, 14);
             this.button1.Margin = new System.Windows.Forms.Padding(5);
@@ -54,7 +57,7 @@
             this.button1.Size = new System.Drawing.Size(102, 33);
             this.button1.TabIndex = 0;
             this.button1.Text = "Para Üstü";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // textBox1
             // 
@@ -223,7 +226,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(339, 249);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(339, 57);
             this.Controls.Add(this.btn00);
             this.Controls.Add(this.btnComma);
             this.Controls.Add(this.btn0);
@@ -240,6 +244,7 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button1);
             this.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "CashBackForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
