@@ -10,19 +10,19 @@ using System.Linq;
 
 namespace DataAccess.Concrete.EntityFramework
 {
-    public class EfShortcutDal : EfEntityRepositoryBase<Shortcut, StockDbContext>, IShortcutDal
+    public class EfProductShortcutDal : EfEntityRepositoryBase<ProductShortcut, StockDbContext>, IProductShortcutDal
     {
 
         public List<ShortcutDetailDto> GetShortcutDetails(Expression<Func<ShortcutDetailDto, bool>> filter = null)
         {
             using (StockDbContext context = new StockDbContext())
             {
-                var result = from s in context.Shortcuts
+                var result = from s in context.ProductShortcuts
                              join p in context.Products on s.ProductId equals p.ProductId
 
                              select new ShortcutDetailDto
                              {
-                                 ShortcutId = s.ShortcutId,
+                                 ProductShortcutId = s.ProductShortcutId,
                                  ProductId = s.ProductId,
                                  Barcode = p.Barcode,
                                  ProductName = p.ProductName

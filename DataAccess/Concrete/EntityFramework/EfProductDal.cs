@@ -38,7 +38,7 @@ namespace DataAccess.Concrete.EntityFramework
                                  UnitName = ju.UnitName == null ? null : (ju.UnitName ?? null),
                                  CategoryName = jc.CategoryName == null ? null : (jc.CategoryName ?? null),
                                  PurchasePrice = p.PurchasePrice,
-                                 SalesPrice = p.SalesPrice,
+                                 SalePrice = p.SalePrice,
                                  Description = p.Description,
                                  Discount = p.Discount,
                                  Vat = p.Vat,

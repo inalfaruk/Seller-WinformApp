@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtBarcode = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.checkStockAdd = new System.Windows.Forms.CheckBox();
@@ -44,7 +44,6 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.txtDescription = new System.Windows.Forms.TextBox();
             this.lblDiscount = new System.Windows.Forms.Label();
-            this.button27 = new System.Windows.Forms.Button();
             this.txtQuantity = new System.Windows.Forms.TextBox();
             this.txtDiscount = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -93,7 +92,6 @@
             this.txtBarcode.PlaceholderText = "Barkod... ";
             this.txtBarcode.Size = new System.Drawing.Size(531, 33);
             this.txtBarcode.TabIndex = 1;
-            this.txtBarcode.TextChanged += new System.EventHandler(this.txtBarcode_TextChanged);
             this.txtBarcode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBarcode_KeyDown);
             // 
             // panel1
@@ -182,34 +180,34 @@
             // gridSales
             // 
             this.gridSales.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Carlito", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridSales.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Carlito", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridSales.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.gridSales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Carlito", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gridSales.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Carlito", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gridSales.DefaultCellStyle = dataGridViewCellStyle5;
             this.gridSales.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridSales.Location = new System.Drawing.Point(0, 197);
             this.gridSales.Name = "gridSales";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Carlito", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridSales.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Carlito", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridSales.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.gridSales.RowTemplate.Height = 25;
             this.gridSales.Size = new System.Drawing.Size(531, 459);
             this.gridSales.TabIndex = 6;
@@ -218,7 +216,6 @@
             // 
             this.panel4.Controls.Add(this.txtDescription);
             this.panel4.Controls.Add(this.lblDiscount);
-            this.panel4.Controls.Add(this.button27);
             this.panel4.Controls.Add(this.txtQuantity);
             this.panel4.Controls.Add(this.txtDiscount);
             this.panel4.Controls.Add(this.label3);
@@ -244,16 +241,6 @@
             this.lblDiscount.Size = new System.Drawing.Size(68, 23);
             this.lblDiscount.TabIndex = 9;
             this.lblDiscount.Text = "İskonto";
-            // 
-            // button27
-            // 
-            this.button27.Location = new System.Drawing.Point(69, 17);
-            this.button27.Name = "button27";
-            this.button27.Size = new System.Drawing.Size(75, 23);
-            this.button27.TabIndex = 11;
-            this.button27.Text = "button27";
-            this.button27.UseVisualStyleBackColor = true;
-            this.button27.Click += new System.EventHandler(this.button27_Click);
             // 
             // txtQuantity
             // 
@@ -431,6 +418,7 @@
             this.btnPartialPayment.TabIndex = 33;
             this.btnPartialPayment.Text = "Kısmi Ödeme";
             this.btnPartialPayment.UseVisualStyleBackColor = false;
+            this.btnPartialPayment.Visible = false;
             // 
             // btnPos
             // 
@@ -443,6 +431,7 @@
             this.btnPos.TabIndex = 32;
             this.btnPos.Text = "POS";
             this.btnPos.UseVisualStyleBackColor = false;
+            this.btnPos.Visible = false;
             this.btnPos.Click += new System.EventHandler(this.btnCash_Click);
             // 
             // btnCash
@@ -565,6 +554,7 @@
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.Gray;
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Carlito", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button3.ForeColor = System.Drawing.Color.White;
@@ -618,7 +608,6 @@
             this.Text = "SaleForm";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.SaleForm_Load);
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SaleForm_KeyDown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -666,7 +655,6 @@
         private CheckBox checkChange;
         private TextBox txtDescription;
         private CheckBox checkQuantity;
-        private Button button27;
         private CheckBox checkStockAdd;
         private Button btnStockAdd;
         private Button button33;

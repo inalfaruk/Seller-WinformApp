@@ -4,21 +4,40 @@ using Entities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
+using DataAccess.Abstract;
 
 namespace Bussiness.Concrete
 {
     public class ColorManager : IColorService
     {
-        IColorService _colorservice;
+        IColorDal _colorDal;
 
-        public ColorManager(IColorService colorService)
+        public ColorManager(IColorDal colorDal)
         {
-            _colorservice = colorService;
+            _colorDal = colorDal;
+        }
+
+        public IResult Add(Color color)
+        {
+            _colorDal.Add(color);
+            return new SuccessResult();
+        }
+
+        public IResult Delete(Color color)
+        {
+            _colorDal.Delete(color);
+            return new SuccessResult();
         }
 
         public IDataResult<List<Color>> GetAll()
         {
-           return new SuccessDataResult<List<Color>>(_colorservice.GetAll().Data);
+           return new SuccessDataResult<List<Color>>(_colorDal.GetAll());
+        }
+
+        public IDataResult<List<Color>> GetAllByFilter(string filter)
+        {
+            return new SuccessDataResult<List<Color>>(_colorDal.GetAll(c=>c.ColorName.StartsWith(filter)));
         }
     }
 }

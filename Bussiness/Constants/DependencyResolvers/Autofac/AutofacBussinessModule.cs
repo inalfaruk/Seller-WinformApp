@@ -36,8 +36,12 @@ namespace Bussiness.Constants.DependencyResolvers.Autofac
             builder.RegisterType<EfUnitDal>().As<IUnitDal>().SingleInstance();
 
 
-            builder.RegisterType<ShortcutManager>().As<IShortcutService>().SingleInstance();
-            builder.RegisterType<EfShortcutDal>().As<IShortcutDal>().SingleInstance();
+            builder.RegisterType<ProductShortcutManager>().As<IProductShortcutService>().SingleInstance();
+            builder.RegisterType<EfProductShortcutDal>().As<IProductShortcutDal>().SingleInstance();
+
+
+            builder.RegisterType<ColorManager>().As<IColorService>().SingleInstance();
+            builder.RegisterType<EfColorDal>().As<IColorDal>().SingleInstance();
         }
 
     }

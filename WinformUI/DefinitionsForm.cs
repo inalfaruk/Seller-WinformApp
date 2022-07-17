@@ -12,6 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Color = Entities.Concrete.Color;
 
 namespace WinformUI
 {
@@ -43,6 +44,19 @@ namespace WinformUI
             gridDefinitions.DataSource = InstanceFactory.GetInstance<IUnitService>().GetAll().Data;
             gridDefinitions.Columns[0].Visible = false;
             gridDefinitions.Columns[1].HeaderText = "Birim";
+            gridDefinitions.Columns[1].Width = 244;
+
+
+        }
+
+
+        private void GetAllColor()
+        {
+
+
+            gridDefinitions.DataSource = InstanceFactory.GetInstance<IColorService>().GetAll().Data;
+            gridDefinitions.Columns[0].Visible = false;
+            gridDefinitions.Columns[1].HeaderText = "Renk";
             gridDefinitions.Columns[1].Width = 244;
 
 
@@ -86,6 +100,14 @@ namespace WinformUI
             GetAllCategory();
         }
 
+        private void btnRenk_Click(object sender, EventArgs e)
+        {
+            Definitions = "Color";
+            lblDefinition.Text = "Renk";
+            GetAllColor();
+
+        }
+
         private void btnAdd_Click(object sender, EventArgs e)
         {
             if (Definitions == "Category")
@@ -108,6 +130,15 @@ namespace WinformUI
                 unit.UnitName = txtDefinition.Text;
                 InstanceFactory.GetInstance<IUnitService>().Add(unit);
                 GetAllUnit();
+            }
+            else if (Definitions == "Color")
+            {
+                Color color = new Color();
+                color.ColorName = txtDefinition.Text;
+                InstanceFactory.GetInstance<IColorService>().Add(color);
+                GetAllUnit();
+               
+
             }
             else
                 MessageBox.Show("Sorun Oluştu!");
@@ -138,6 +169,14 @@ namespace WinformUI
                 gridDefinitions.DataSource = InstanceFactory.GetInstance<IUnitService>().GetAllByFilter(txtDefinition.Text).Data;
                
             }
+
+            else if (Definitions == "Color")
+            {
+                Entities.Concrete.Color color = new Entities.Concrete.Color();
+                color.ColorName = txtDefinition.Text;
+                gridDefinitions.DataSource = InstanceFactory.GetInstance<IColorService>().GetAllByFilter(txtDefinition.Text).Data;
+
+            }
             else
                 MessageBox.Show("Sorun Oluştu!");
         }
@@ -151,5 +190,49 @@ namespace WinformUI
         {
             this.Close();
         }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (gridDefinitions.SelectedRows.Count > 0)
+            {
+
+
+
+                if (Definitions == "Category")
+                {
+                    Category category = new Category();
+                    category.CategoryId = Convert.ToInt32(gridDefinitions.SelectedRows[0].Cells["categoryId"].Value);
+                    InstanceFactory.GetInstance<ICategoryService>().Delete(category);
+                    GetAllCategory();
+                }
+                else if (Definitions == "Brand")
+                {
+                    Brand brand = new Brand();
+                    brand.BrandId = Convert.ToInt32(gridDefinitions.SelectedRows[0].Cells["brandId"].Value);
+                    InstanceFactory.GetInstance<IBrandService>().Delete(brand);
+                    GetAllBrand();
+                }
+                else if (Definitions == "Unit")
+                {
+                    Unit unit = new Unit();
+                    unit.UnitId = Convert.ToInt32(gridDefinitions.SelectedRows[0].Cells["unitId"].Value);
+                    InstanceFactory.GetInstance<IUnitService>().Delete(unit);
+                    GetAllUnit();
+                }
+
+                else if (Definitions == "Color")
+                {
+                    Color color = new Color();
+                    color.ColorId = Convert.ToInt32(gridDefinitions.SelectedRows[0].Cells["colorId"].Value);
+                    InstanceFactory.GetInstance<IColorService>().Delete(color);
+                    GetAllColor();
+                }
+                else
+                    MessageBox.Show("Sorun Oluştu!");
+                
+            }
+        }
+
+  
     }
 }

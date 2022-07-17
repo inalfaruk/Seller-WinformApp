@@ -24,7 +24,7 @@ namespace Entities.Concrete
 
         public decimal PurchasePrice { get; set; } 
 
-        public decimal SalesPrice { get; set; } 
+        public decimal SalePrice { get; set; } 
 
         public string? SpecialCode { get; set; } 
 

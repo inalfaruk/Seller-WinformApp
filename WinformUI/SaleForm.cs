@@ -27,7 +27,7 @@ namespace WinformUI
         List<OrderDetailDto> orderDetailList = new List<OrderDetailDto>();
 
         Product product = new Product();
-        int x,y;
+        int x, y;
         private void SaleForm_Load(object sender, EventArgs e)
         {
             timer.Start();
@@ -41,7 +41,7 @@ namespace WinformUI
             x = 0;
             y = 0;
 
-            foreach (var item in InstanceFactory.GetInstance<IShortcutService>().GetAllDetails().Data)
+            foreach (var item in InstanceFactory.GetInstance<IProductShortcutService>().GetAllDetails().Data)
             {
 
 
@@ -52,11 +52,18 @@ namespace WinformUI
 
                 btn.Location = new Point(x, y);
                 btn.Name = item.Barcode.ToString();
+                if (File.Exists(Application.StartupPath.ToString() + @"\images\" + item.Barcode + ".jpg"))
+                {
+                    btn.BackgroundImage = Image.FromFile(Application.StartupPath.ToString() + @"\images\" + item.Barcode + ".jpg");
+                    btn.BackgroundImageLayout = ImageLayout.Stretch;
+                }
+
                 btn.Text = item.ProductName.ToString();
-                
+
+
                 panelShortcuts.Controls.Add(btn);
                 btn.Click += new System.EventHandler(btn_Click);
-               
+
                 x = x + 125;
 
                 if (x > 300)
@@ -64,7 +71,7 @@ namespace WinformUI
                     x = 0;
                     y = 125 + y;
                 }
-                
+
             }
         }
 
@@ -72,8 +79,8 @@ namespace WinformUI
         private void btn_Click(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
-            
-            txtBarcode.Text =btn.Name;
+
+            txtBarcode.Text = btn.Name;
             txtBarcode.Focus();
             SendKeys.Send("{ENTER}");
         }
@@ -104,11 +111,6 @@ namespace WinformUI
             lblTime.Text = DateTime.Now.ToLocalTime().ToString();
         }
 
-        private void txtBarcode_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnCash_Click(object sender, EventArgs e)
         {
             if (checkChange.Checked == true)
@@ -128,13 +130,11 @@ namespace WinformUI
 
                 try
                 {
-                    
-                    {
 
-                    }
+
                     Order order = new Order
                     {
-                     
+
                         PaymentType = "Nakit",
                         //  OrderDate = DateTime.Now.ToLocalTime(),
                         Status = false,
@@ -183,24 +183,13 @@ namespace WinformUI
             }
         }
 
-        private void button27_Click(object sender, EventArgs e)
-        {
 
 
 
-
-
-
-        }
-
-        private void txtBarcode_KeyPress(object sender, KeyPressEventArgs e)
-        {
-
-        }
 
         private void txtBarcode_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter && txtBarcode.Text!="" )
+            if (e.KeyCode == Keys.Enter && txtBarcode.Text != "")
             {
                 product = InstanceFactory.GetInstance<IProductService>().GetByBarcode(txtBarcode.Text).Data;
                 OrderDetailDto orderDetail = new OrderDetailDto();
@@ -214,11 +203,14 @@ namespace WinformUI
 
                 }
                 else
-                { 
+                {
 
-
-                    orderDetail.UnitPrice = product.SalesPrice;
                     orderDetail.Quantity = Convert.ToDecimal(txtQuantity.Text);
+                    if (checkStockAdd.Checked)
+                        orderDetail.UnitPrice = product.PurchasePrice;
+                     else
+                    orderDetail.UnitPrice = product.SalePrice;
+                   
                     orderDetail.ProductId = product.ProductId;
                     //  orderDetail.Vat = product.Vat;
                     //   rowtotal = product.SalesPrice * Convert.ToDecimal(txtQuantity.Text);
@@ -231,26 +223,15 @@ namespace WinformUI
                 }
 
                 GetOrderDetailList();
-                if (checkStockAdd.Checked)
-                {
-                    lblTotal.Text = Convert.ToDecimal(orderDetail.Quantity * product.PurchasePrice).ToString();
-                }
-                else
-                {
-                    total = orderDetailList.Sum(item => item.Total);
-                    lblTotal.Text = total.ToString() + " ₺";
-                }
+
+                total = orderDetailList.Sum(item => item.Total);
+                lblTotal.Text = total.ToString() + " ₺";
                 txtBarcode.Text = "";
             }
-          
-
 
         }
 
-        private void SaleForm_KeyDown(object sender, KeyEventArgs e)
-        {
 
-        }
 
         private void btnStockAdd_Click(object sender, EventArgs e)
         {
@@ -266,7 +247,7 @@ namespace WinformUI
                 txtBarcode.Text = "";
                 gridSales.DataSource = orderDetailList;
 
-               
+
 
             }
 
@@ -281,9 +262,18 @@ namespace WinformUI
             if (checkStockAdd.Checked)
             {
                 btnStockAdd.Visible = true;
+                total = 0;
+                lblTotal.Text = "";
+                orderDetailList.Clear();
+                gridSales.DataSource = orderDetailList;
 
             }
-            else btnStockAdd.Visible=false;
+            else btnStockAdd.Visible = false;
+            total = 0;
+            lblTotal.Text = "";
+            orderDetailList.Clear();
+            gridSales.DataSource = orderDetailList;
+
         }
     }
 }

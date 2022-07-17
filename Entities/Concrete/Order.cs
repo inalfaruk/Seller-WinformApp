@@ -20,5 +20,6 @@ namespace Entities.Concrete
         public decimal Total { get; set; }
 
         public string PaymentType { get; set; }
+       // public bool OrderType { get; set; }
     }
 }

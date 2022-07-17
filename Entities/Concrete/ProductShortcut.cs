@@ -5,10 +5,10 @@ using System.Text;
 
 namespace Entities.Concrete
 {
-    public class Shortcut :IEntity
+    public class ProductShortcut :IEntity
     {
 
-        public int ShortcutId { get; set; }
+        public int ProductShortcutId { get; set; }
 
         public int ProductId { get; set; }
     }

@@ -31,7 +31,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gridDefinitions = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.btnSerch = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnCategory = new System.Windows.Forms.Button();
@@ -41,6 +41,7 @@
             this.lblDefinition = new System.Windows.Forms.Label();
             this.txtDefinition = new System.Windows.Forms.TextBox();
             this.btnClose = new System.Windows.Forms.Button();
+            this.btnRenk = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gridDefinitions)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -69,13 +70,14 @@
             this.gridDefinitions.RowHeadersVisible = false;
             this.gridDefinitions.RowTemplate.Height = 25;
             this.gridDefinitions.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.gridDefinitions.Size = new System.Drawing.Size(244, 220);
+            this.gridDefinitions.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.gridDefinitions.Size = new System.Drawing.Size(329, 220);
             this.gridDefinitions.TabIndex = 1;
             // 
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btnDelete);
             this.panel1.Controls.Add(this.btnSerch);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.btnAdd);
@@ -84,32 +86,33 @@
             this.panel1.Location = new System.Drawing.Point(0, 20);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(244, 177);
+            this.panel1.Size = new System.Drawing.Size(329, 177);
             this.panel1.TabIndex = 2;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // button1
+            // btnDelete
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(202, 146);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(41, 29);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Sil";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.ForeColor = System.Drawing.Color.White;
+            this.btnDelete.Location = new System.Drawing.Point(286, 147);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(41, 29);
+            this.btnDelete.TabIndex = 6;
+            this.btnDelete.Text = "Sil";
+            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnSerch
             // 
             this.btnSerch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnSerch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSerch.ForeColor = System.Drawing.Color.White;
-            this.btnSerch.Location = new System.Drawing.Point(68, 86);
+            this.btnSerch.Location = new System.Drawing.Point(110, 89);
             this.btnSerch.Margin = new System.Windows.Forms.Padding(4);
             this.btnSerch.Name = "btnSerch";
-            this.btnSerch.Size = new System.Drawing.Size(59, 33);
+            this.btnSerch.Size = new System.Drawing.Size(82, 33);
             this.btnSerch.TabIndex = 5;
             this.btnSerch.Text = "Ara";
             this.btnSerch.UseVisualStyleBackColor = false;
@@ -117,6 +120,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.btnRenk);
             this.panel2.Controls.Add(this.btnCategory);
             this.panel2.Controls.Add(this.btnBrand);
             this.panel2.Controls.Add(this.btnUnit);
@@ -124,7 +128,7 @@
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(242, 36);
+            this.panel2.Size = new System.Drawing.Size(327, 36);
             this.panel2.TabIndex = 4;
             // 
             // btnCategory
@@ -136,7 +140,7 @@
             this.btnCategory.Location = new System.Drawing.Point(160, 0);
             this.btnCategory.Margin = new System.Windows.Forms.Padding(4);
             this.btnCategory.Name = "btnCategory";
-            this.btnCategory.Size = new System.Drawing.Size(80, 36);
+            this.btnCategory.Size = new System.Drawing.Size(85, 36);
             this.btnCategory.TabIndex = 5;
             this.btnCategory.Text = "Kategori";
             this.btnCategory.UseVisualStyleBackColor = false;
@@ -177,7 +181,7 @@
             this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Location = new System.Drawing.Point(158, 86);
+            this.btnAdd.Location = new System.Drawing.Point(200, 89);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(4);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(85, 33);
@@ -189,7 +193,7 @@
             // lblDefinition
             // 
             this.lblDefinition.AutoSize = true;
-            this.lblDefinition.Location = new System.Drawing.Point(3, 54);
+            this.lblDefinition.Location = new System.Drawing.Point(12, 62);
             this.lblDefinition.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDefinition.Name = "lblDefinition";
             this.lblDefinition.Size = new System.Drawing.Size(45, 19);
@@ -198,7 +202,7 @@
             // 
             // txtDefinition
             // 
-            this.txtDefinition.Location = new System.Drawing.Point(68, 51);
+            this.txtDefinition.Location = new System.Drawing.Point(110, 54);
             this.txtDefinition.Margin = new System.Windows.Forms.Padding(4);
             this.txtDefinition.Name = "txtDefinition";
             this.txtDefinition.Size = new System.Drawing.Size(175, 27);
@@ -210,19 +214,34 @@
             this.btnClose.FlatAppearance.BorderSize = 0;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Image = global::WinformUI.Properties.Resources.cross_1_;
-            this.btnClose.Location = new System.Drawing.Point(223, -1);
+            this.btnClose.Location = new System.Drawing.Point(301, -2);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(23, 20);
             this.btnClose.TabIndex = 6;
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // btnRenk
+            // 
+            this.btnRenk.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnRenk.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnRenk.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRenk.ForeColor = System.Drawing.Color.White;
+            this.btnRenk.Location = new System.Drawing.Point(245, 0);
+            this.btnRenk.Margin = new System.Windows.Forms.Padding(4);
+            this.btnRenk.Name = "btnRenk";
+            this.btnRenk.Size = new System.Drawing.Size(85, 36);
+            this.btnRenk.TabIndex = 6;
+            this.btnRenk.Text = "Renk";
+            this.btnRenk.UseVisualStyleBackColor = false;
+            this.btnRenk.Click += new System.EventHandler(this.btnRenk_Click);
+            // 
             // DefinitionsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(244, 417);
+            this.ClientSize = new System.Drawing.Size(329, 417);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.gridDefinitions);
             this.Controls.Add(this.btnClose);
@@ -252,8 +271,9 @@
         private Button btnAdd;
         private Label lblDefinition;
         private TextBox txtDefinition;
-        private Button button1;
+        private Button btnDelete;
         private Button btnSerch;
         private Button btnClose;
+        private Button btnRenk;
     }
 }

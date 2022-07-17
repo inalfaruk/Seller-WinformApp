@@ -19,7 +19,7 @@ namespace DataAccess.Concrete.EntityFramework
 
         public DbSet<Product> Products { get; set; }
 
-        public DbSet<Shortcut> Shortcuts { get; set; }
+        public DbSet<ProductShortcut> ProductShortcuts { get; set; }
         public DbSet<Category> Categories { get; set; }
 
         public DbSet<Brand> Brands { get; set; }

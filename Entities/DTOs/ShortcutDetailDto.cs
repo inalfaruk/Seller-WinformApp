@@ -7,7 +7,7 @@ namespace Entities.DTOs
 {
     public class ShortcutDetailDto :IDto
     {
-        public int ShortcutId { get; set; }
+        public int ProductShortcutId { get; set; }
 
         public int ProductId { get; set; }
 

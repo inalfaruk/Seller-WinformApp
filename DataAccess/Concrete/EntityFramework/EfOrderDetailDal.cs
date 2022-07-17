@@ -28,7 +28,7 @@ namespace DataAccess.Concrete.EntityFramework
                                 Quantity=o.Quantity,
                                 UnitName=u.UnitName,
                                 ProductName= p.ProductName,                              
-                                UnitPrice=p.SalesPrice,
+                                UnitPrice=p.SalePrice,
                                 Total=o.Quantity*o.UnitPrice
                                 
                                  

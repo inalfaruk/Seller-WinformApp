@@ -8,7 +8,7 @@ using System.Text;
 
 namespace DataAccess.Abstract
 {
-    public interface IShortcutDal :IEntityRepository<Shortcut>
+    public interface IProductShortcutDal :IEntityRepository<ProductShortcut>
     {
 
         public List<ShortcutDetailDto> GetShortcutDetails(Expression<Func<ShortcutDetailDto, bool>> filter = null);

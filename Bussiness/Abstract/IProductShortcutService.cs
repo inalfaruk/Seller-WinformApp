@@ -7,10 +7,13 @@ using System.Text;
 
 namespace Bussiness.Abstract
 {
-    public  interface IShortcutService
+    public  interface IProductShortcutService
     {
-        IDataResult<List<Shortcut>> GetAll();
+        IDataResult<List<ProductShortcut>> GetAll();
 
         IDataResult<List<ShortcutDetailDto>> GetAllDetails();
+        IResult Add(ProductShortcut shortcut);
+
+        IResult Delete(ProductShortcut shortcut);
     }
 }

@@ -9,5 +9,10 @@ namespace Bussiness.Abstract
     public interface IColorService
     {
         IDataResult<List<Color>> GetAll();
+
+        IDataResult<List<Color>> GetAllByFilter(string filter);
+
+        IResult Add(Color color);
+        IResult Delete(Color color);
     }
 }
