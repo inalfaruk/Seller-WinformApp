@@ -20,6 +20,8 @@ namespace WinformUI
     {
         decimal total;
         decimal rowtotal;
+        string paymentType;
+        int x, y;
         public SaleForm()
         {
             InitializeComponent();
@@ -27,7 +29,7 @@ namespace WinformUI
         List<OrderDetailDto> orderDetailList = new List<OrderDetailDto>();
 
         Product product = new Product();
-        int x, y;
+        
         private void SaleForm_Load(object sender, EventArgs e)
         {
             timer.Start();
@@ -63,7 +65,8 @@ namespace WinformUI
 
                 panelShortcuts.Controls.Add(btn);
                 btn.Click += new System.EventHandler(btn_Click);
-
+                
+                //buton boyutları :)
                 x = x + 125;
 
                 if (x > 300)
@@ -113,13 +116,15 @@ namespace WinformUI
 
         private void btnCash_Click(object sender, EventArgs e)
         {
-            if (checkChange.Checked == true)
-            {
-                CashBackForm f = new CashBackForm();
-                f.ShowDialog();
-            }
+            //if (checkChange.Checked == true)
+            //{
+            //    CashBackForm f = new CashBackForm();
+            //    f.ShowDialog();
+            //}
 
-            Sell();
+            paymentType = (sender as Button).Text;
+            MessageBox.Show(paymentType);
+             Sell();
 
         }
 
@@ -135,7 +140,7 @@ namespace WinformUI
                     Order order = new Order
                     {
 
-                        PaymentType = "Nakit",
+                        PaymentType = paymentType,
                         //  OrderDate = DateTime.Now.ToLocalTime(),
                         Status = false,
                         Description = txtDescription.Text,
