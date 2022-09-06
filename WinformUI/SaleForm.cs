@@ -116,15 +116,11 @@ namespace WinformUI
 
         private void btnCash_Click(object sender, EventArgs e)
         {
-            //if (checkChange.Checked == true)
-            //{
-            //    CashBackForm f = new CashBackForm();
-            //    f.ShowDialog();
-            //}
+           
 
             paymentType = (sender as Button).Text;
             MessageBox.Show(paymentType);
-             Sell();
+            Sell();
 
         }
 

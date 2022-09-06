@@ -43,10 +43,10 @@
             this.btnProducts.ForeColor = System.Drawing.Color.White;
             this.btnProducts.Image = global::WinformUI.Properties.Resources.quality;
             this.btnProducts.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProducts.Location = new System.Drawing.Point(343, 183);
+            this.btnProducts.Location = new System.Drawing.Point(330, 179);
             this.btnProducts.Margin = new System.Windows.Forms.Padding(6);
             this.btnProducts.Name = "btnProducts";
-            this.btnProducts.Size = new System.Drawing.Size(213, 131);
+            this.btnProducts.Size = new System.Drawing.Size(242, 131);
             this.btnProducts.TabIndex = 1;
             this.btnProducts.Text = "Stok Listesi";
             this.btnProducts.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -60,10 +60,10 @@
             this.btnDefinitions.ForeColor = System.Drawing.Color.White;
             this.btnDefinitions.Image = global::WinformUI.Properties.Resources.note;
             this.btnDefinitions.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDefinitions.Location = new System.Drawing.Point(343, 44);
+            this.btnDefinitions.Location = new System.Drawing.Point(330, 40);
             this.btnDefinitions.Margin = new System.Windows.Forms.Padding(6);
             this.btnDefinitions.Name = "btnDefinitions";
-            this.btnDefinitions.Size = new System.Drawing.Size(213, 131);
+            this.btnDefinitions.Size = new System.Drawing.Size(242, 131);
             this.btnDefinitions.TabIndex = 2;
             this.btnDefinitions.Text = "Tanımlar";
             this.btnDefinitions.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -77,7 +77,7 @@
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Image = global::WinformUI.Properties.Resources.shopping;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(45, 44);
+            this.button1.Location = new System.Drawing.Point(32, 40);
             this.button1.Margin = new System.Windows.Forms.Padding(6);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(286, 252);
@@ -94,7 +94,7 @@
             this.button2.ForeColor = System.Drawing.Color.White;
             this.button2.Image = global::WinformUI.Properties.Resources.add;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(45, 307);
+            this.button2.Location = new System.Drawing.Point(32, 303);
             this.button2.Margin = new System.Windows.Forms.Padding(6);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(286, 147);
@@ -123,10 +123,10 @@
             this.btnShortcut.ForeColor = System.Drawing.Color.White;
             this.btnShortcut.Image = global::WinformUI.Properties.Resources.shortcuticon;
             this.btnShortcut.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnShortcut.Location = new System.Drawing.Point(343, 323);
+            this.btnShortcut.Location = new System.Drawing.Point(330, 319);
             this.btnShortcut.Margin = new System.Windows.Forms.Padding(6);
             this.btnShortcut.Name = "btnShortcut";
-            this.btnShortcut.Size = new System.Drawing.Size(213, 131);
+            this.btnShortcut.Size = new System.Drawing.Size(242, 131);
             this.btnShortcut.TabIndex = 7;
             this.btnShortcut.Text = "Satış Kısayoları";
             this.btnShortcut.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -135,7 +135,7 @@
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 26F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(600, 490);
@@ -145,7 +145,7 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnProducts);
-            this.Font = new System.Drawing.Font("Carlito", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "MainForm";
